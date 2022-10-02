@@ -13,6 +13,6 @@
 > 
 > 2. V rámci ***modré barvy*** k navození pocitu:
 > 
->   - důvěryhodnosti *(vaše problémy vždy včas vyřešíme)*
->   - konzervatismu a stability *(na trhu působíme již spoustu let a máme vhodné zkušenosti)*
+>     -  důvěryhodnosti *(vaše problémy vždy včas vyřešíme)*
+>     - konzervatismu a stability *(na trhu působíme již spoustu let a máme vhodné zkušenosti)*
 >   
