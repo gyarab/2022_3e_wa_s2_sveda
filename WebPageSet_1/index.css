@@ -1,0 +1,16 @@
+img {
+    width: 100px;
+    border: solid 1px black;
+    padding: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+h1 {
+    font-size: 100px;
+    color: #FF00FF;
+}
+
+body {
+    
+}
