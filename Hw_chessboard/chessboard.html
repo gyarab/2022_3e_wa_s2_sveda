@@ -24,9 +24,9 @@
     <script>
         d=document
         a=true
-        for (i=0; i < 64; i++) {
+        for (i=0; i<64; i++) {
             if (i%8!==0) a=!a
-            r = d.createElement('p')
+            r=d.createElement('p')
             r.classList.add('r')
             r.style.backgroundColor = a?'white':'black'
             d.getElementById('c').appendChild(r)
