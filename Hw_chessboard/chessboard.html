@@ -3,32 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Chessboard</title>
-    <style>
-        #c {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .r {
-            display: inline-block;
-            margin: 10px 0 0 2%;
-            flex-grow: 1;
-            height: 100px;
-            width: calc(100%*(1/9) - 10px - 1px);
-            border: 1px solid black;
-        }
-    </style>
 </head>
 <body>
-    <p id="c"></p>
+    <p id="c" style="display:flex;flex-wrap:wrap;"></p>
     <script>
         d=document
         a=true
         for (i=0; i<64; i++) {
             if (i%8!==0) a=!a
             r=d.createElement('p')
-            r.classList.add('r')
-            r.style.backgroundColor = a?'white':'black'
+            r.style.cssText+='display: inline-block;margin: 10px 0 0 2%;flex-grow: 1;height: 100px;width: calc(100%*(1/9) - 10px - 1px);border: 1px solid black;background-color:' + (a?'white;':'black;')
             d.getElementById('c').appendChild(r)
         }
     </script>
