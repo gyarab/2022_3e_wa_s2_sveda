@@ -2,6 +2,7 @@ from time import sleep
 
 import httpx
 from pick import pick
+from termcolor import colored
 
 URL = "https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/denni_kurz.txt"
 data = httpx.get(URL).text.split("\n")
@@ -18,18 +19,18 @@ for row in data:
 def calculate_currency():
     before_currency_input_title = "Vyberte vstupní měnu: "
     before_currency_input = pick(list(currency_json.keys()), before_currency_input_title, "=>")
-    print(before_currency_input_title + before_currency_input[0])
+    print(colored(before_currency_input_title, 'yellow') + colored(before_currency_input[0], "magenta"))
 
     after_currency_input_title = "Vyberte výstupní měnu: "
     after_currency_input = pick(list(currency_json.keys()), after_currency_input_title, "=>")
-    print(after_currency_input_title + after_currency_input[0])
+    print(colored(after_currency_input_title, 'yellow') + colored(after_currency_input[0], "magenta"))
 
     if before_currency_input == after_currency_input:
-        print("Vstupní a výstupní měna nemůže být stejná! Zkuste to znovu...")
+        print(colored("Vstupní a výstupní měna nemůže být stejná! Zkuste to znovu...", "red"))
         sleep(2)
         return -1
 
-    input_amount = input("Zadejte částku v " + before_currency_input[0] + ": ")
+    input_amount = input(colored("Zadejte částku v " + before_currency_input[0] + ": ", "yellow"))
 
     if "," in input_amount:
         input_amount = input_amount.replace(",", ".")
@@ -37,7 +38,7 @@ def calculate_currency():
     try:
         input_amount = float(input_amount)
     except ValueError:
-        print("Částka musí být číslo! Zkuste to znovu...")
+        print(colored("Částka musí být číslo! Zkuste to znovu...", "red"))
         sleep(2)
         return -1
 
@@ -52,5 +53,5 @@ while try_again:
     result = calculate_currency()
 
     if result != -1:
-        print(result)
+        print(colored(result, "green"))
         try_again = False
